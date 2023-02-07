@@ -16,8 +16,8 @@ export default function Home() {
       </Head>
       <div className={`flex justify-center items-center h-screen ${inter.className}`}>
         <div className=' bg-[#ffffff] text-[#000000] p-16 rounded-xl shadow-2xl text-center max-w-lg'>
-          <p className='font-medium text-2xl break-words'>"You have power over your mind - not outside events. Realize this, and you will find strength."</p>
-          <p className='pt-6 uppercase text-[#999999] font-medium'>Andrew Tate</p>
+          <p className='font-medium text-2xl break-words'>{`"${quote}"`}</p>
+          <p className='pt-6 uppercase text-[#999999] font-medium'>{author}</p>
         </div>
       </div>
     </>
