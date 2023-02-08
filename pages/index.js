@@ -9,6 +9,8 @@ import MarcusAurelius from '@/public/images/authors/Marcus Aurelius.png'
 import Seneca from '@/public/images/authors/Seneca.png'
 import Zeno from '@/public/images/authors/Zeno.png'
 
+import defaultProfile from '@/public/images/default.png'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -35,7 +37,7 @@ export default function Home() {
     } else 
     if (author === 'Epictetus') {
       setProfile(Epictetus)
-    }
+    } else
     if (author === 'Marcus Aurelius') {
       setProfile(MarcusAurelius)
     } else 
@@ -86,7 +88,7 @@ export default function Home() {
           </div>
           {/* Footer */}
           <div className='w-full flex justify-center items-center m-7'>
-            <Image src={profile} className="h-[55px] w-[55px] bg-white rounded-full p-1 shadow-xl"/>
+            <Image src={profile} onError={(e) => { e.target.src = defaultProfile }} className="h-[55px] w-[55px] bg-white rounded-full p-1 shadow-xl"/>
             <div className='bg-white p-4 m-2 rounded-full font-medium shadow-2xl'>Developed by Sphe. 2023</div>
           </div>
           </>
