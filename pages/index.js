@@ -1,11 +1,24 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import { pickRandomQuote } from './quotes'
+import { useState, useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const { quote, author } = pickRandomQuote();
+  const [quote, setQuote] = useState('')
+  const [author, setAuthor] = useState('')
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch('https://stoicquotesapi.com/v1/api/quotes/random')
+      const data = await res.json()
+      setQuote(data.body)
+      setAuthor(data.author)
+    }
+    fetchData()
+  }, [])
+
+
   return (
     <>
       <Head>
